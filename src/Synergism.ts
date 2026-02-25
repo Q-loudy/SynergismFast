@@ -5370,7 +5370,7 @@ window.addEventListener('unload', () => {
 const setupTimeSkipButtons = () => {
   const buttons = [
     { id: 'timeSkipHour', seconds: 3600 },
-    { id: 'timeSkipHourDay', seconds: 86400 }
+    { id: 'timeSkipDay', seconds: 86400 }
   ]
 
   buttons.forEach(({ id, seconds }) => {
