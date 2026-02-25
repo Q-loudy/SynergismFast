@@ -5367,9 +5367,15 @@ window.addEventListener('unload', () => {
   window.scrollTo(0, 0)
 })
 
-const btn = document.getElementById('timeSkipHourButton')
-if (btn) {
-  btn.addEventListener('click', () => {
-    calculateOffline(3600)
+const setupTimeSkipButtons = () => {
+  const buttons = [
+    { id: 'timeSkipHour', seconds: 3600 },
+    { id: 'timeSkipHourDay', seconds: 86400 }
+  ]
+
+  buttons.forEach(({ id, seconds }) => {
+    document.getElementById(id)?.addEventListener('click', () => calculateOffline(seconds))
   })
 }
+
+setupTimeSkipButtons()
