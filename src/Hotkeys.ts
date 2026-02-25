@@ -1,5 +1,6 @@
 import i18next from 'i18next'
 import { boostAccelerator, buyAccelerator, buyMultiplier } from './Buy'
+import { calculateOffline } from './Calculate' 
 import { DOMCacheGetOrSet } from './Cache/DOM'
 import { confirmAntSacrifice } from './Features/Ants/AntSacrifice/sacrifice'
 import { promocodes } from './ImportExport'
@@ -26,9 +27,11 @@ export const defaultHotkeys = new Map<string, [string, () => unknown, /* hide du
   ['M', ['hotkeys.names.multipliers', () => buyMultiplier(), false]],
   ['N', ['hotkeys.names.noCancel', () => confirmReply(false), true]],
   ['P', ['hotkeys.names.resetPrestige', () => resetCheck('prestige'), false]],
+  ['Q', ['hotkeys.names.timeskipHour', () => calculateOffline(3600), false]], 
   ['R', ['hotkeys.names.resetReincarnate', () => resetCheck('reincarnation'), false]],
   ['S', ['hotkeys.names.sacrificeAnts', () => confirmAntSacrifice(), false]],
   ['T', ['hotkeys.names.resetTranscend', () => resetCheck('transcension'), false]],
+  ['W', ['hotkeys.names.timeskipDay', () => calculateOffline(86400), false]], 
   ['Y', ['hotkeys.names.yesOK', () => confirmReply(true), true]],
   ['ARROWLEFT', ['hotkeys.names.backTab', () => kbTabChange(-1), false]],
   ['ARROWRIGHT', ['hotkeys.names.nextTab', () => kbTabChange(1), false]],
