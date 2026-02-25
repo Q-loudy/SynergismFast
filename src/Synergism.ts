@@ -5366,3 +5366,10 @@ window.addEventListener('unload', () => {
   // beforehand? How does anyone use this buggy browser???????
   window.scrollTo(0, 0)
 })
+
+const btn = document.getElementById('testOfflineButton')
+if (btn) {
+  btn.addEventListener('click', () => {
+    calculateOffline(3600)
+  })
+}
