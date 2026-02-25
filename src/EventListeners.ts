@@ -257,7 +257,12 @@ export const generateEventHandlers = () => {
   // Offline Button
   DOMCacheGetOrSet('exitOffline').addEventListener('click', () => exitOffline())
   DOMCacheGetOrSet('offlineContainer').addEventListener('dblclick', () => exitOffline())
-
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      exitOffline()
+    }
+  })
+  
   // Fast forward button
   DOMCacheGetOrSet('exitFastForward').addEventListener('click', () => exitFastForward())
   DOMCacheGetOrSet('fastForwardContainer').addEventListener('dblclick', () => exitFastForward())
