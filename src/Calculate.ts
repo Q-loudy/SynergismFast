@@ -830,7 +830,6 @@ export const exitOffline = () => {
   DOMCacheGetOrSet('offlineContainer').style.display = 'none'
   DOMCacheGetOrSet('offlineBlur').style.display = 'none'
   enableHotkeys()
-  DOMCacheGetOrSet('exitOffline')?.focus()
 }
 
 export const calculateSigmoid = (
