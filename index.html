@@ -4787,5 +4787,11 @@
       </div>
     </div>
     <button id="testOfflineButton" style="position: fixed; bottom: 20px; right: 20px; padding: 10px 15px; border: 2px solid green; background-color: #1a1a1a; color: white; cursor: pointer; z-index: 1000; font-size: 14px; border-radius: 4px;">Test 1 Hour Offline</button>
+    <script>
+        document.getElementById('testOfflineButton').addEventListener('click', () => {
+            // 1 hour = 3600 seconds
+            calculateOffline(3600)
+        })
+    </script>
 </body>
 </html>
