@@ -5367,7 +5367,7 @@ window.addEventListener('unload', () => {
   window.scrollTo(0, 0)
 })
 
-const btn = document.getElementById('testOfflineButton')
+const btn = document.getElementById('timeSkipHourButton')
 if (btn) {
   btn.addEventListener('click', () => {
     calculateOffline(3600)
