@@ -1,6 +1,7 @@
 import '@ungap/custom-elements'
 import Decimal, { type DecimalSource } from 'break_infinity.js'
 import LZString from 'lz-string'
+import { dailyResetCheck } from './Calculate.ts'
 
 import {
   autoAscensionChallengeSweepUnlock,
@@ -5370,11 +5371,13 @@ window.addEventListener('unload', () => {
 const setupTimeSkipButtons = () => {
   const buttons = [
     { id: 'timeSkipHour', seconds: 3600 },
-    { id: 'timeSkipDay', seconds: 86400 }
+    { id: 'timeSkipDay', seconds: 86400, dailyReset: true }
   ]
-
-  buttons.forEach(({ id, seconds }) => {
-    document.getElementById(id)?.addEventListener('click', () => calculateOffline(seconds))
+  buttons.forEach(({ id, seconds, dailyReset }) => {
+    document.getElementById(id)?.addEventListener('click', () => {
+      calculateOffline(seconds)
+      if (dailyReset) dailyResetCheck(true)
+    })
   })
 }
 
