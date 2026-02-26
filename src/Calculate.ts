@@ -1633,7 +1633,7 @@ export const calculateDilatedFiveLeafBonus = () => {
   return singThresholds.length / 100
 }
 
-export const dailyResetCheck = () => {
+export const dailyResetCheck = (forceReset = false) => {
   if (!player.dayCheck) {
     return
   }
@@ -1646,7 +1646,7 @@ export const dailyResetCheck = () => {
 
   // Daily is not reset even if it is set to a past time.
   // If the daily is not reset, the data may have been set to a future time.
-  if (day.getTime() - 3600000 > player.dayCheck.getTime()) {
+  if (forceReset || day.getTime() - 3600000 > player.dayCheck.getTime()) {
     player.dayCheck = day
 
     forcedDailyReset(true)
