@@ -1,7 +1,6 @@
 import '@ungap/custom-elements'
 import Decimal, { type DecimalSource } from 'break_infinity.js'
 import LZString from 'lz-string'
-import { dailyResetCheck } from './Calculate'
 
 import {
   autoAscensionChallengeSweepUnlock,
