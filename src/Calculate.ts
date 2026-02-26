@@ -1634,7 +1634,7 @@ export const calculateDilatedFiveLeafBonus = () => {
 }
 
 export const dailyResetCheck = (forceReset = false) => {
-  if (!player.dayCheck) {
+  if (!forceReset && !player.dayCheck) {
     return
   }
   const now = new Date(getTimePinnedToLoadDate())
